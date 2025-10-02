@@ -11,12 +11,12 @@
   <header>
     <nav>
       <h1>Boris EPHESTION</h1>
-        <ul><a href="/apropos.html">À propos</a></li>
-          <li><a href="/competences.html" >Compétences</a></li>
-          <li><a href="/projets.html" >Projets</a></li>
-          <li><a href="/stages.html" >Stages</a></li>
-          <li><a href="/contact.html" >Contact</a></li>
-          <button id="theme-switch-navbar">
+        <ul><a href="apropos.html">À propos</a></li>
+          <li><a href="competences.html" >Compétences</a></li>
+          <li><a href="projets.html" >Projets</a></li>
+          <li><a href="stages.html" >Stages</a></li>
+          <li><a href="contact.html" >Contact</a></li>
+          <li><button id="theme-switch-navbar">
                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                   <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/>
                </svg>
@@ -24,6 +24,7 @@
                   <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/>
                </svg>
             </button>
+          </li>
          </ul>
      
          <!-- Icône de menu pour la sidebar (visible uniquement sur mobile) -->
@@ -40,11 +41,11 @@
              <li onclick="hidesidebar()">
                  <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000000" id="close-icon"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
              </li>
-          <li><a href="/apropos.html">À propos</a></li>
-          <li><a href="/competences.html" >Compétences</a></li>
-          <li><a href="/projets.html" >Projets</a></li>
-          <li><a href="/stages.html" >Stages</a></li>
-          <li><a href="/contact.html" >Contact</a></li>
+          <li><a href="apropos.html">À propos</a></li>
+          <li><a href="competences.html" >Compétences</a></li>
+          <li><a href="projets.html" >Projets</a></li>
+          <li><a href="stages.html" >Stages</a></li>
+          <li><a href="contact.html" >Contact</a></li>
          </ul>
      </aside>
      <script>
@@ -62,23 +63,33 @@
   <main>
     <section id="apropos">
       <h2>À propos de moi</h2>
-      <p>Une courte présentation, ce que tu fais, tes passions...</p>
+        <p>Je m’appelle Boris EPHÉSTION, étudiant en deuxième année de BTS SIO option SLAM. Passionné par l’informatique, la musique et l’automobile, je développe mes compétences en programmation et m’intéresse particulièrement aux enjeux de la cybersécurité.</p>
     </section>
 
     <section id="competences">
       <h2>Mes compétences</h2>
       <ul>
-        <li>HTML / CSS</li>
-        <li>Python</li>
-        <li>Autres compétences…</li>
+        <li>
+          <h3>Réseau</h3>
+          <p>Adressage IP / Routage, Maintenance de 1er niveau</p>
+        </li>
+        <li>
+          <h3>Programmation</h3>
+          <p>HP, HTML/CSS, Python, JS</p>
+        </li>
+        <li>
+          <h3>Base de données</h3>
+          <p>PostgreSQL & MySQL</p>
+        </li>
       </ul>
+
     </section>
 
     <section id="projets">
       <h2>Mes projets</h2>
       <article>
         <h3>Projet 1</h3>
-        <p>Description du projet et ce que tu as réalisé.</p>
+        <p>il s'agit d'un site web vitrine en HTML/CSS et un script JS.</p>
         <img src="chemin/image.jpg" alt="Description de l'image du projet">
       </article>
     </section>
@@ -86,8 +97,9 @@
     <section id="stages">
       <h2>Mes stages</h2>
       <article>
-        <h3>Nom de l'entreprise</h3>
-        <p>Ce que tu as fait et appris.</p>
+        <img src="/images/Chantiers Modernes.jpg" alt="logo Chantiers Modernes Construction">
+        <h3>Chantiers Modernes Construction (Vinci Construction France)</h3>
+        <p>Chantiers Modernes Construction est une filiale du groupe Vinci Construction France, j'y ai réaliser un stage qui consistait principalement dans la maintenance informatique</p>
       </article>
     </section>
 
