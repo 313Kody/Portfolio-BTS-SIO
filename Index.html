@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Portfolio Boris EPHESTION - BTS SIO  </title>
+  <link rel="stylesheet" href="/CSS/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-
   <header>
     <nav>
-      <h1>Boris EPHESTION</h1>
-        <ul><a href="apropos.html">À propos</a></li>
+      <h1><a href="Index.html">Boris EPHESTION</a></h1>
+        <ul>
+          <li><a href="profil.html">Profil</a></li>
           <li><a href="competences.html" >Compétences</a></li>
           <li><a href="projets.html" >Projets</a></li>
           <li><a href="stages.html" >Stages</a></li>
-          <li><a href="contact.html" >Contact</a></li>
-          <li><button id="theme-switch-navbar">
+          <li><a href="#contact" >Contact</a></li>
+          <button id="theme-switch-navbar">
                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
                   <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/>
                </svg>
@@ -24,94 +25,108 @@
                   <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/>
                </svg>
             </button>
-          </li>
          </ul>
      
-         <!-- Icône de menu pour la sidebar (visible uniquement sur mobile) -->
-         <div class="menu-button" onclick="showsidebar()">
+         <!-- Icône de menu pour la sidebar -->
+         <div class="menu-button">
              <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000000" id="menu-icon">
                  <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
              </svg>
          </div>
      </nav>
      
-     <!-- Sidebar (initialement cachée) -->
+     <!-- Sidebar -->
      <aside class="sidebar" id="sidebar">
          <ul>
-             <li onclick="hidesidebar()">
-                 <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000000" id="close-icon"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
-             </li>
-          <li><a href="apropos.html">À propos</a></li>
-          <li><a href="competences.html" >Compétences</a></li>
-          <li><a href="projets.html" >Projets</a></li>
-          <li><a href="stages.html" >Stages</a></li>
-          <li><a href="contact.html" >Contact</a></li>
+            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000000" id="close-icon">
+            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="competences.html" >Compétences</a></li>
+            <li><a href="projets.html" >Projets</a></li>
+            <li><a href="stages.html" >Stages</a></li>
+            <li><a href="#contact" >Contact</a></li>
+            <button id="theme-switch-navbar">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                  <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/>
+               </svg>
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                  <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/>
+               </svg>
+            </button>
          </ul>
      </aside>
-     <script>
-         function showsidebar(){
-             const sidebar = document.querySelector('.sidebar');
-             sidebar.style.display = 'flex';
-         }
-         function hidesidebar(){
-             const sidebar = document.querySelector('.sidebar');
-             sidebar.style.display = 'none';
-         }
-      </script>
   </header>
-
   <main>
-    <section id="apropos">
-      <h2>À propos de moi</h2>
-        <p>Je m’appelle Boris EPHÉSTION, étudiant en deuxième année de BTS SIO option SLAM. Passionné par l’informatique, la musique et l’automobile, je développe mes compétences en programmation et m’intéresse particulièrement aux enjeux de la cybersécurité.</p>
+    <section id="landing-page">
+      <h1 class="big-title">Boris EPHESTION</h1>
+        <h3 class="title-info">Etudiant en BTS SIO Option SLAM (développement)</h3>
+          <p>Bienvenue sur mon Portfolio !</p>
     </section>
 
-    <section id="competences">
-      <h2>Mes compétences</h2>
-      <ul>
-        <li>
-          <h3>Réseau</h3>
-          <p>Adressage IP / Routage, Maintenance de 1er niveau</p>
-        </li>
-        <li>
-          <h3>Programmation</h3>
-          <p>HP, HTML/CSS, Python, JS</p>
-        </li>
-        <li>
-          <h3>Base de données</h3>
-          <p>PostgreSQL & MySQL</p>
-        </li>
-      </ul>
+    <section class="profil">
+      <h2 class="small-title">À propos de moi</h2>
+        <img src="images/photo/boris_photo.jpg" alt="Photo Boris">
+        <p>Je m’appelle Boris EPHESTION, étudiant en deuxième année de BTS SIO option SLAM. Passionné par l’informatique, la musique et l’automobile, je développe mes compétences en programmation et m’intéresse particulièrement aux enjeux de la cybersécurité.</p>
+      <a href="profil.html" class="bg-green-500 text-white px-4 py-2 rounded inline-block hover:bg-green-600 transition">En savoir plus</a>
+      </section>
 
+    <section class="competences">
+      <h2 class="small-title">Mes compétences</h2>
+        <p>Je maîtrise le développement web, la gestion de bases de données et la cybersécurité. J’ai travaillé sur divers projets qui combinent ces compétences.</p>
+        <div class="flex flex-wrap gap-6 justify-center">
+          <div class="flex flex-col items-center">
+            <img src="images/icone/php.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300">
+            <p>PHP</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <img src="images/icone/python.svg" class="w-16 h-16 hover:scale-110 transition-transform duration-300">
+            <p>Python</p>
+          </div>
+        </div>
+        <a href="competences.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">En savoir plus</a>
     </section>
 
-    <section id="projets">
-      <h2>Mes projets</h2>
+    <section class="projets">
+      <h2 class="small-title">Mes projets</h2>
       <article>
-        <h3>Projet 1</h3>
+        <h3 class="title-info">Premier Projet</h3>
         <p>il s'agit d'un site web vitrine en HTML/CSS et un script JS.</p>
-        <img src="chemin/image.jpg" alt="Description de l'image du projet">
+        <img src="images/site_313/darkmode.png" alt="Page de garde du site 313plug">
+        <a href="/projets.html" class="bg-green-500 text-white px-4 py-2 rounded inline-block hover:bg-green-600 transition">En savoir plus</a>
       </article>
     </section>
 
-    <section id="stages">
-      <h2>Mes stages</h2>
+    <section class="stages">
+      <h2 class="small-title">Mes stages</h2>
       <article>
-        <img src="/images/Chantiers Modernes.jpg" alt="logo Chantiers Modernes Construction">
-        <h3>Chantiers Modernes Construction (Vinci Construction France)</h3>
-        <p>Chantiers Modernes Construction est une filiale du groupe Vinci Construction France, j'y ai réaliser un stage qui consistait principalement dans la maintenance informatique</p>
+        <img src="/images/icone/chantiers_modernes.jpg" alt="logo Chantiers Modernes Construction">
+        <h3 class="title-info">Chantiers Modernes Construction (Vinci Construction France)</h3>
+        <p>Chantiers Modernes Construction est une filiale du groupe Vinci Construction France, j'y ai réaliser un stage qui consistait principalement dans la maintenance informatique.</p>
       </article>
+      <a href="stages.html" class="bg-green-500 text-white px-4 py-2 rounded inline-block hover:bg-green-600 transition">En savoir plus</a>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <h2 class="small-title">Contact</h2>
       <p>Email : <a href="mailto:borisephestion@gmail.com">borisephestion@gmail.com</a></p>
+      <form>
+
+      </form>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Boris EPHESTION</p>
+    <a href="https://www.linkedin.com/in/boris-ephestion-52082b280" target="_blank">
+      <img src="images/icone/Linkedin.png" alt="Logo Linkedin">
+    </a>
+    <a href="https://github.com/313Kody" target="_blank">
+      <img src="images/icone/github.svg" alt="logo GitHub">
+    </a>
+    <p>&copy; 2025 Boris EPHESTION - BTS SIO</p>
   </footer>
+
+<script src="darkmode.js"></script>
+<script src="sidebar.js"></script>
 
 </body>
 </html>
