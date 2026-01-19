@@ -1,15 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const sidebar = document.getElementById("sidebar");
-  const openBtn = document.querySelector(".menu-button");
-  const closeBtn = sidebar.querySelector("button");
+const sidebar = document.getElementById("sidebar");
+const btnOpen = document.getElementById("menu-open");
+const btnClose = document.getElementById("menu-close");
 
-  // Ouvrir sidebar
-  openBtn.addEventListener("click", () => {
-    sidebar.classList.add("show");
-  });
+btnOpen.addEventListener("click", () =>
+  sidebar.classList.remove("sidebar-hidden")
+);
+btnClose.addEventListener("click", () =>
+  sidebar.classList.add("sidebar-hidden")
+);
 
-  // Fermer sidebar
-  closeBtn.addEventListener("click", () => {
-    sidebar.classList.remove("show");
-  });
+// Fermer la sidebar en cliquant sur un lien
+document.querySelectorAll("#sidebar a").forEach((link) => {
+  link.addEventListener("click", () => sidebar.classList.add("sidebar-hidden"));
 });

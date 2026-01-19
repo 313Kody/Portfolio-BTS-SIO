@@ -1,13 +1,13 @@
-const sidebar = document.getElementById("sidebar");
-const openBtn = document.getElementById("openSidebar");
-const closeBtn = document.getElementById("closeSidebar");
+const themeBtn = document.getElementById("theme-switch");
+const sunIcon = document.getElementById("sun-icon");
+const moonIcon = document.getElementById("moon-icon");
 
-// Ouvrir la sidebar
-openBtn.addEventListener("click", () => {
-  sidebar.classList.add("active");
-});
-
-// Fermer la sidebar
-closeBtn.addEventListener("click", () => {
-  sidebar.classList.remove("active");
+themeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("bg-slate-900");
+  document.body.classList.toggle("text-white");
+  sunIcon.classList.toggle("hidden");
+  moonIcon.classList.toggle("hidden");
+  // Optionnel : stocker le choix
+  const isDark = document.body.classList.contains("bg-slate-900");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 });

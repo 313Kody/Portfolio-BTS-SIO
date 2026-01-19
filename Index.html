@@ -1,178 +1,708 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Boris EPHESTION - BTS SIO</title>
-  <link rel="stylesheet" href="/CSS/style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  <header class="bg-white shadow-md">
-    <nav class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold"><a href="Index.html">Boris EPHESTION</a></h1>
-      <ul class="hidden md:flex gap-6">
-        <li><a href="#profil" class="hover:text-green-700">Profil</a></li>
-        <li><a href="#competences" class="hover:text-green-700">Compétences</a></li>
-        <li><a href="#projets" class="hover:text-green-700">Projets</a></li>
-        <li><a href="#stages" class="hover:text-green-700">Stages</a></li>
-        <li><a href="#contact" class="hover:text-green-700">Contact</a></li>
-      </ul>
-    </nav>
-  
-         <!-- Icône de menu pour la sidebar -->
-         <div class="menu-button">
-             <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000000" id="menu-icon">
-                 <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-             </svg>
-         </div>
-     </nav>
-     
-     <!-- Sidebar -->
-     <aside class="sidebar" id="sidebar">
-         <ul>
-            <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000000" id="close-icon">
-            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
-            <li><a href="#profil">Profil</a></li>
-            <li><a href="#competences" >Compétences</a></li>
-            <li><a href="#projets" >Projets</a></li>
-            <li><a href="#stages" >Stages</a></li>
-            <li><a href="#contact" >Contact</a></li>
-            <button id="theme-switch-navbar">
-               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-                  <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/>
-               </svg>
-               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
-                  <path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/>
-               </svg>
-            </button>
-         </ul>
-     </aside>
-  </header>
-  <main>
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Boris EPHESTION - BTS SIO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Petit ajustement pour masquer la scrollbar quand le menu est ouvert si besoin */
+      body.menu-open {
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+    <header class="bg-emerald-900 text-white shadow-lg sticky top-0 z-50">
+      <nav
+        class="container mx-auto flex justify-between items-center p-4 md:p-6"
+      >
+        <h1
+          class="text-2xl font-bold tracking-tight hover:text-emerald-200 transition"
+        >
+          <a href="Index.html">Boris EPHESTION</a>
+        </h1>
 
-    <section id="landing-page">
-      <h1 class="big-title">Boris EPHESTION</h1>
-        <h3 class="title-info">Etudiant en BTS SIO Option SLAM (développement)</h3>
-          <p>Bienvenue sur mon Portfolio !</p>
-    </section>
+        <ul class="hidden md:flex gap-8 font-medium">
+          <li>
+            <a href="#profil" class="hover:text-emerald-300 transition-colors"
+              >Profil</a
+            >
+          </li>
+          <li>
+            <a
+              href="#competences"
+              class="hover:text-emerald-300 transition-colors"
+              >Compétences</a
+            >
+          </li>
+          <li>
+            <a href="#projets" class="hover:text-emerald-300 transition-colors"
+              >Projets</a
+            >
+          </li>
+          <li>
+            <a href="#stages" class="hover:text-emerald-300 transition-colors"
+              >Stages</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-emerald-300 transition-colors"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              href="Tableau E5"
+              class="hover:text-emerald-300 transition-colors"
+              >Tableau E5</a
+            >
+          </li>
+        </ul>
 
-    <section class="#profil flex flex-col md:flex-row items-start gap-6 p-20">
-      <!-- Photo à gauche -->
-      <div class="md:w-1/3 flex justify-start">
-        <img src="images/photo/boris_photo.jpg" alt="Photo Boris" class="w-64 h-64 object-cover rounded-xl shadow-lg">
-      </div>
+        <div
+          class="md:hidden cursor-pointer p-2 rounded hover:bg-emerald-800 transition"
+          id="menu-open-btn"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="28px"
+            viewBox="0 -960 960 960"
+            width="28px"
+            fill="#ffffff"
+            id="menu-icon"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </div>
+      </nav>
 
-      <!-- Texte à droite -->
-      <div class="md:w-2/3 flex flex-col gap-4 items-center">
-        <h2 class="small-title text-2xl font-bold mb-4">À propos de moi</h2>
-        <article>
-          <p class="mb-2">Je m’appelle Boris EPHESTION, étudiant en deuxième année de BTS SIO option SLAM. Passionné par l’informatique, la musique et l’automobile, je développe mes compétences en programmation et m’intéresse particulièrement aux enjeux de la cybersécurité.</p>
-          <p>Lors de mes projets et stages, j’ai appris à travailler avec différents langages et outils, ce qui me permet de participer efficacement à des projets variés.</p>
-        </article>
-        <a href="documents/CV de Boris EPHESTION.pdf" class="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600 transition inline-block self-start">📄 Voir mon CV</a>
-      </div>
-    </section>
+      <aside
+        id="sidebar"
+        class="fixed top-0 left-0 h-full w-64 bg-white text-slate-900 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-50"
+      >
+        <div class="p-6 flex flex-col h-full">
+          <button
+            id="close-sidebar"
+            class="self-end mb-8 p-2 rounded-full hover:bg-slate-100 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="28px"
+              viewBox="0 -960 960 960"
+              width="28px"
+              fill="#000000"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              />
+            </svg>
+          </button>
 
-    <section class="formation p-20">
-        <h2 class="small-title text-2xl font-bold mb-4">Mes formations</h2>
-        <article>
-          <p>Mon parcours m’a permis d’acquérir une solide base en informatique, allant de la gestion des réseaux à la conception d’applications.</p>   
-          <p>Actuellement en BTS SIO option SLAM (Solutions Logicielles et Applications Métiers), je poursuis mon apprentissage du développement logiciel tout en consolidant les compétences techniques acquises lors de mon Bac Professionnel Systèmes Numériques option RISC (Réseaux Informatiques et Systèmes Communicants).</p>
-        </article>
+          <ul class="flex flex-col gap-6 font-semibold text-lg">
+            <li>
+              <a
+                href="#profil"
+                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
+                >Profil</a
+              >
+            </li>
+            <li>
+              <a
+                href="#competences"
+                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
+                >Compétences</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projets"
+                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
+                >Projets</a
+              >
+            </li>
+            <li>
+              <a
+                href="#stages"
+                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
+                >Stages</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="Tableau E5"
+                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
+                >Tableau E5</a
+              >
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <div
+        id="overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 md:hidden"
+      ></div>
+    </header>
+
+    <main>
+      <section
+        id="landing-page"
+        class="h-[85vh] flex flex-col justify-center items-center text-center bg-gradient-to-b from-emerald-50 to-white px-4"
+      >
+        <h1
+          class="text-5xl md:text-7xl font-extrabold text-emerald-900 mb-6 drop-shadow-sm"
+        >
+          Boris EPHESTION
+        </h1>
+        <h3 class="text-xl md:text-2xl text-emerald-700 font-medium mb-6">
+          Etudiant en BTS SIO Option SLAM (développement)
+        </h3>
+        <p class="text-lg md:text-xl max-w-2xl text-slate-600">
+          Bienvenue sur mon Portfolio !
+        </p>
+
+        <div class="mt-12 animate-bounce">
+          <svg
+            class="w-8 h-8 text-emerald-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            ></path>
+          </svg>
+        </div>
       </section>
 
-      <section class="diplome p-20">
-        <h2 class="small-title text-2xl font-bold mb-4">Mes diplômes</h2>
-        <article>
-          <p>2025 - BTS Systèmes Informatiques aux Organisations (SIO) option Solutions Logicielles et Applications Métiers (SLAM) | en cours</p>
-          <p>2024 - Baccalauréat Professionnel Systèmes Numériques option informatiques et les réseaux de communication | RISC</p>
-          <P>(Mention très bien)</P>
-        </article>
-      </section> 
-
-    <!-- Expériences -->
-  <section class="stages p-20">
-    <h2 class="small-title text-2xl font-bold mb-4">Mon expérience</h2>
-      <article>
-        <img src="/images/icone/chantiers_modernes.jpg" alt="logo Chantiers Modernes Construction">
-        <h3 class="title-info text-xl font-bold mb-4">Chantiers Modernes Construction (Vinci Construction France)</h3>
-        <p>Chantiers Modernes Construction est une filiale du groupe Vinci Construction France, j'y ai réaliser un stage qui consistait principalement dans la maintenance informatique.</p>
-      </article>
-      <article>
-        <img src="images/icone/aphp.png" alt="Logo APHP">
-        <h3 class="title-info text-xl font-bold mb-4">Hôpital Saint-Louis APHP</h3>
-        <p>Au cours de mon stage à Saint-Louis, j’ai assuré le support technique auprès des utilisateurs, participé à la configuration et à la mise à jour de switches réseau.</p>
-        <p>J'ai pu accompagné les techniciens dans la préparation du matériel nécessaire aux interventions.</p>
-      </article>
-      <a href="documents/rapport de synthese Boris EPHESTION terminale TSN3.pdf" class="bg-green-500 text-white px-4 py-2 rounded inline-block mt-4 hover:bg-green-600 transition">📝 Voir mon rapport de synthèse</a> 
-    </section>
-</section>
-
-
-    <section id="competences" class="flex flex-col md:flex-row items-start justify-between gap-10 p-20 bg-white rounded-xl shadow-md">
-      <div class="md:w-1/2 space-y-3">
-        <h2 class="text-2xl font-bold text-700">Mes compétences</h2>
-        <p>Lors de ma formation en BTS SIO, j’ai développé des compétences en programmation web et en sécurisation des systèmes.</p>
-        <p>J’ai appris à travailler avec différents outils et environnements (PHP, Python, MySQL, virtualisation, cloud), ce qui me permet de comprendre et de participer efficacement à des projets informatiques variés.</p>
-        <p>Configuration et gestion de routeurs / switches, Maintenance de 1er niveau.</p>
-      </div>
-      <div class="md:w-1/2 relative overflow-x-auto flex gap-6 py-4">
-       <img src="images/icone/cisco_packet_tracer.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Cisco Packet Tracer">
-          <img src="images/icone/virtualbox.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Virtual Box">
-          <img src="images/icone/kalilinux.svg" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Kali Linux"> 
-          <img src="images/icone/debian.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Debian">
-          <img src="images/icone/php.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo PHP">
-          <img src="images/icone/python.svg" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Python">
-          <img src="images/icone/javascript.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo JavaScript">
-          <img src="images/icone/typescript.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo TypeScript">
-          <img src="images/icone/html.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo HTML5">
-          <img src="images/icone/css.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo CSS">
-          <img src="images/icone/nodejs.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Node Js">
-          <img src="images/icone/angular.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Angular">
-          <img src="images/icone/tailwindcss.svg" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Tailwind CSS">  
-          <img src="images/icone/postgresql.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo PostgreSQL">
-          <img src="images/icone/mysql.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo MySQL">
-          <img src="images/icone/git.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Git">
-          <img src="images/icone/Adobe_Premiere_Pro.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Premiere Pro">
-          <img src="images/icone/Adobe_Photoshop.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo Photoshop">
-          <img src="images/icone/aws.png" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo AWS">
-          <img src="images/icone/github.svg" class="w-16 h-16 hover:scale-110 transition-transform duration-300" alt="Logo GitHub">
+      <section
+        id="profil"
+        class="container mx-auto py-20 px-6 flex flex-col md:flex-row items-center gap-12"
+      >
+        <div class="md:w-1/3 flex justify-center md:justify-end">
+          <img
+            src="images/photo/boris_photo.jpg"
+            alt="Photo Boris"
+            class="w-72 h-72 object-cover rounded-3xl shadow-2xl border-4 border-white transform hover:scale-105 transition duration-500"
+          />
         </div>
-       </div>
-    </section>
 
-    <section id="projets">
-      <h2 class="small-title text-2xl font-bold mb-4">Mes projets</h2>
-      <article>
-        <h3 class="title-info text-xl font-bold mb-4">Premier Projet</h3>
-        <p>il s'agit d'un site web vitrine en HTML/CSS et un script JS.</p>
-        <img src="images/site_313/darkmode.png" class="w-64 h-64 object-cover rounded-xl shadow-lg" alt="Page de garde du site 313plug">
-      </article>
-    </section>
+        <div class="md:w-2/3 flex flex-col items-start space-y-4">
+          <h2
+            class="text-3xl font-bold text-emerald-800 border-b-4 border-emerald-500 pb-2"
+          >
+            À propos de moi
+          </h2>
+          <article class="text-lg text-slate-700 space-y-4 leading-relaxed">
+            <p>
+              Je m’appelle Boris EPHESTION, étudiant en deuxième année de BTS
+              SIO option SLAM. Passionné par l’informatique, la musique et
+              l’automobile, je développe mes compétences en programmation et
+              m’intéresse particulièrement aux enjeux de la cybersécurité.
+            </p>
+            <p>
+              Lors de mes projets et stages, j’ai appris à travailler avec
+              différents langages et outils, ce qui me permet de participer
+              efficacement à des projets variés.
+            </p>
+          </article>
+          <a
+            href="documents/CV de Boris EPHESTION.pdf"
+            class="bg-emerald-600 text-white px-6 py-3 rounded-full font-bold mt-6 hover:bg-emerald-700 hover:-translate-y-1 transition shadow-lg flex items-center gap-2"
+          >
+            <span>📄</span> Voir mon CV
+          </a>
+        </div>
+      </section>
 
-    <section id="contact">
-      <h2 class="small-title text-2xl font-bold mb-4">Contact</h2>
-      <p>Email : <a href="mailto:borisephestion@gmail.com">borisephestion@gmail.com</a></p>
-      <form>
+      <section class="bg-white py-20">
+        <div class="container mx-auto px-6">
+          <h2
+            class="text-3xl font-bold text-emerald-800 mb-8 text-center md:text-left"
+          >
+            Mes formations
+          </h2>
+          <article
+            class="max-w-4xl bg-slate-50 p-8 rounded-2xl shadow-sm border-l-4 border-emerald-500"
+          >
+            <p class="mb-4 text-lg">
+              Mon parcours m’a permis d’acquérir une solide base en
+              informatique, allant de la gestion des réseaux à la conception
+              d’applications.
+            </p>
+            <p class="text-lg text-slate-700">
+              Actuellement en BTS SIO option SLAM (Solutions Logicielles et
+              Applications Métiers), je poursuis mon apprentissage du
+              développement logiciel tout en consolidant les compétences
+              techniques acquises lors de mon Bac Professionnel Systèmes
+              Numériques option RISC (Réseaux Informatiques et Systèmes
+              Communicants).
+            </p>
+          </article>
+        </div>
+      </section>
 
-      </form>
-    </section>
-  </main>
+      <section class="bg-emerald-900 text-white py-20">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold mb-8 text-center md:text-left">
+            Mes diplômes
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <article
+              class="bg-emerald-800 p-6 rounded-xl shadow-lg hover:bg-emerald-700 transition"
+            >
+              <span class="text-emerald-300 font-bold text-xl block mb-2"
+                >2025</span
+              >
+              <p class="font-semibold text-lg">BTS SIO option SLAM</p>
+              <p class="text-emerald-200 text-sm italic mt-1">En cours</p>
+            </article>
+            <article
+              class="bg-emerald-800 p-6 rounded-xl shadow-lg hover:bg-emerald-700 transition"
+            >
+              <span class="text-emerald-300 font-bold text-xl block mb-2"
+                >2024</span
+              >
+              <p class="font-semibold text-lg">
+                Baccalauréat Professionnel Systèmes Numériques (RISC)
+              </p>
+              <p class="text-emerald-200 text-sm italic mt-1">
+                Mention Très Bien
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-  <!-- Footer -->
-  <footer class="bg-white shadow-inner mt-10 p-4 text-center space-x-4">
-    <a href="https://www.linkedin.com/in/boris-ephestion-52082b280" target="_blank">
-      <img src="images/icone/Linkedin.png" alt="LinkedIn" class="inline w-8 h-8">
-    </a>
-    <a href="https://github.com/313Kody" target="_blank">
-      <img src="images/icone/github.svg" alt="GitHub" class="inline w-8 h-8">
-    </a>
-    <p class="mt-2">&copy; 2025 Boris EPHESTION - BTS SIO</p>
-  </footer>
+      <section id="stages" class="container mx-auto py-20 px-6">
+        <h2 class="text-3xl font-bold text-emerald-800 mb-12 text-center">
+          Mon expérience
+        </h2>
 
-<script src="darkmode.js"></script>
-<script src="sidebar.js"></script>
+        <div class="grid md:grid-cols-2 gap-10">
+          <div class="flex flex-col items-start">
+            <article
+              class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 h-full w-full hover:shadow-xl transition"
+            >
+              <div class="h-20 mb-4 flex items-center">
+                <img
+                  src="/images/logo/chantiers_modernes.jpg"
+                  alt="logo Chantiers Modernes"
+                  class="max-h-full object-contain"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-slate-800 mb-3">
+                Chantiers Modernes Construction (Vinci)
+              </h3>
+              <p class="text-slate-600">
+                Chantiers Modernes Construction est une filiale du groupe Vinci
+                Construction France, j'y ai réalisé un stage qui consistait
+                principalement dans la maintenance informatique.
+              </p>
+            </article>
+            <a
+              href="documents/Rapport de stage SIO1B Boris EPHESTION.pdf"
+              class="mt-4 text-emerald-600 font-semibold hover:text-emerald-800 hover:underline flex items-center gap-1 transition"
+            >
+              📝 Voir mon rapport de stage
+            </a>
+          </div>
 
-</body>
+          <div class="flex flex-col items-start">
+            <article
+              class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 h-full w-full hover:shadow-xl transition"
+            >
+              <div class="h-20 mb-4 flex items-center">
+                <img
+                  src="images/logo/aphp.png"
+                  alt="Logo APHP"
+                  class="max-h-full object-contain"
+                />
+              </div>
+              <h3 class="text-xl font-bold text-slate-800 mb-3">
+                Hôpital Saint-Louis APHP
+              </h3>
+              <p class="text-slate-600 mb-2">
+                Au cours de mon stage à Saint-Louis, j’ai assuré le support
+                technique auprès des utilisateurs, participé à la configuration
+                et à la mise à jour de switches réseau.
+              </p>
+              <p class="text-slate-600">
+                J'ai pu accompagner les techniciens dans la préparation du
+                matériel nécessaire aux interventions.
+              </p>
+            </article>
+            <a
+              href="documents/rapport de synthese Boris EPHESTION terminale TSN3.pdf"
+              class="mt-4 text-emerald-600 font-semibold hover:text-emerald-800 hover:underline flex items-center gap-1 transition"
+            >
+              📝 Voir mon rapport de stage
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="competences" class="bg-slate-100 py-20">
+        <div
+          class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12"
+        >
+          <div class="md:w-1/2 space-y-6">
+            <h2 class="text-3xl font-bold text-emerald-800">Mes compétences</h2>
+            <div class="text-lg text-slate-700 space-y-4">
+              <p>
+                Lors de ma formation en BTS SIO, j’ai développé des compétences
+                en programmation web et en sécurisation des systèmes.
+              </p>
+              <p>
+                J’ai appris à travailler avec différents outils et
+                environnements (PHP, Python, MySQL, virtualisation, cloud), ce
+                qui me permet de comprendre et de participer efficacement à des
+                projets informatiques variés.
+              </p>
+              <ul class="list-disc pl-5 space-y-2 text-slate-600">
+                <li>Configuration et gestion de routeurs / switches</li>
+                <li>Maintenance de 1er niveau</li>
+                <li>Développement Fullstack</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 bg-white p-8 rounded-3xl shadow-xl">
+            <div class="flex flex-wrap justify-center gap-6">
+              <img
+                src="images/logo/cisco_packet_tracer.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="Packet Tracer"
+              />
+              <img
+                src="images/logo/virtualbox.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="VirtualBox"
+              />
+              <img
+                src="images/logo/kalilinux.svg"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="Kali"
+              />
+              <img
+                src="images/logo/debian.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="Debian"
+              />
+              <img
+                src="images/logo/php.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="PHP"
+              />
+              <img
+                src="images/logo/python.svg"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="Python"
+              />
+              <img
+                src="images/logo/javascript.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="JS"
+              />
+              <img
+                src="images/logo/typescript.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="TS"
+              />
+              <img
+                src="images/logo/html.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="HTML"
+              />
+              <img
+                src="images/logo/css.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="CSS"
+              />
+              <img
+                src="images/logo/nodejs.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="NodeJS"
+              />
+              <img
+                src="images/logo/angular.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="Angular"
+              />
+              <img
+                src="images/logo/tailwindcss.svg"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="Tailwind"
+              />
+              <img
+                src="images/logo/postgresql.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="PostgreSQL"
+              />
+              <img
+                src="images/logo/mysql.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="MySQL"
+              />
+              <img
+                src="images/logo/git.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="Git"
+              />
+              <img
+                src="images/logo/Adobe_Premiere_Pro.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="Premiere"
+              />
+              <img
+                src="images/logo/Adobe_Photoshop.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="Photoshop"
+              />
+              <img
+                src="images/logo/aws.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="AWS"
+              />
+              <img
+                src="images/logo/github.svg"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="GitHub"
+              />
+              <img
+                src="images/logo/entra-id.png"
+                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
+                title="Entra ID"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projets" class="container mx-auto py-20 px-6">
+        <h2 class="text-3xl font-bold text-emerald-800 mb-12 text-center">
+          Mes projets
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <article
+            class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition duration-300 flex flex-col"
+          >
+            <div class="relative overflow-hidden group h-64">
+              <img
+                src="images/site_313/darkmode.png"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                alt="Page de garde du site 313plug"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition"
+              ></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-emerald-900 mb-2">
+                Premier Projet
+              </h3>
+              <p class="text-slate-600 mb-4 flex-grow">
+                Il s'agit d'un site web vitrine en HTML/CSS et un script JS.
+              </p>
+              <a
+                href="images/site_313/responsive(blanc).png"
+                class="inline-block text-center bg-emerald-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-emerald-700 transition"
+              >
+                Voir plus
+              </a>
+            </div>
+          </article>
+
+          <article
+            class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition duration-300 flex flex-col"
+          >
+            <div class="relative overflow-hidden group h-64">
+              <img
+                src="images/site_accessibilite/landing-page.png"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                alt="landing page du site d'accessiblité"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition"
+              ></div>
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-emerald-900 mb-2">
+                Deuxième Projet
+              </h3>
+              <p class="text-slate-600 mb-4 flex-grow">
+                Il s'agit d'un site web réalisé en classe pour comprendre et
+                s'entraîner à l'accessibilité web.
+              </p>
+              <a
+                href="images/site_accessibilite/accessiblilité-vue.png"
+                class="inline-block text-center bg-emerald-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-emerald-700 transition"
+              >
+                Voir plus
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="bg-slate-50 py-20 px-6">
+        <div class="container mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-bold text-emerald-800 mb-6">
+            Contactez-moi
+          </h2>
+
+          <div class="bg-white p-8 rounded-2xl shadow-xl">
+            <p class="text-lg text-slate-700 mb-4">
+              Une question ou une proposition de stage ?
+            </p>
+            <p class="font-medium mb-6">
+              Email :
+              <a
+                href="mailto:borisephestion@gmail.com"
+                class="text-emerald-600 hover:underline"
+                >borisephestion@gmail.com</a
+              >
+            </p>
+
+            <div class="flex justify-center gap-6 mb-8">
+              <a
+                href="https://www.linkedin.com/in/boris-ephestion-52082b280"
+                target="_blank"
+                class="transform hover:scale-110 transition"
+              >
+                <img
+                  src="images/logo/Linkedin.png"
+                  alt="LinkedIn"
+                  class="w-10 h-10"
+                />
+              </a>
+              <a
+                href="https://github.com/313Kody"
+                target="_blank"
+                class="transform hover:scale-110 transition"
+              >
+                <img
+                  src="images/logo/github.svg"
+                  alt="GitHub"
+                  class="w-10 h-10"
+                />
+              </a>
+            </div>
+
+            <form class="flex flex-col gap-4 text-left">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1"
+                  >Nom</label
+                >
+                <input
+                  type="text"
+                  placeholder="Votre nom"
+                  class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  placeholder="Votre e-mail"
+                  class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1"
+                  >Message</label
+                >
+                <textarea
+                  placeholder="Votre message"
+                  rows="4"
+                  class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg hover:bg-emerald-700 transition shadow-md"
+              >
+                Envoyer
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 mt-10 p-6 text-center">
+      <div
+        class="flex justify-center space-x-6 mb-4 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"
+      >
+        <a
+          href="https://www.linkedin.com/in/boris-ephestion-52082b280"
+          target="_blank"
+        >
+          <img
+            src="images/logo/Linkedin.png"
+            alt="LinkedIn"
+            class="inline w-6 h-6"
+          />
+        </a>
+        <a href="https://github.com/313Kody" target="_blank">
+          <img
+            src="images/logo/github.svg"
+            alt="GitHub"
+            class="inline w-6 h-6"
+          />
+        </a>
+      </div>
+      <p class="text-slate-500 text-sm">
+        &copy; 2025 Boris EPHESTION - BTS SIO
+      </p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sidebar = document.getElementById("sidebar");
+        const openBtn = document.getElementById("menu-open-btn");
+        const closeBtn = document.getElementById("close-sidebar");
+        const overlay = document.getElementById("overlay");
+        const sidebarLinks = document.querySelectorAll(".sidebar-link");
+
+        function openSidebar() {
+          sidebar.classList.remove("-translate-x-full");
+          overlay.classList.remove("hidden");
+          document.body.classList.add("menu-open");
+        }
+
+        function closeSidebar() {
+          sidebar.classList.add("-translate-x-full");
+          overlay.classList.add("hidden");
+          document.body.classList.remove("menu-open");
+        }
+
+        // Écouteurs d'événements
+        openBtn.addEventListener("click", openSidebar);
+        closeBtn.addEventListener("click", closeSidebar);
+        overlay.addEventListener("click", closeSidebar);
+
+        // Fermer la sidebar quand on clique sur un lien du menu
+        sidebarLinks.forEach((link) => {
+          link.addEventListener("click", closeSidebar);
+        });
+      });
+    </script>
+  </body>
 </html>
