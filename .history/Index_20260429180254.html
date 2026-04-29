@@ -361,7 +361,7 @@
           <!-- Timeline Container -->
           <div class="relative">
             <!-- Timeline Line -->
-            <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-violet-600 via-emerald-600 to-emerald-400 dark:from-violet-700 dark:via-violet-600 dark:to-violet-500"></div>
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-emerald-400 via-emerald-600 to-violet-600 dark:from-violet-500 dark:via-violet-600 dark:to-violet-700"></div>
             
             <!-- 2026 - Akonis (Cybersécurité) -->
             <div class="mb-16 relative">
@@ -435,6 +435,7 @@
                 <div class="md:w-1/2 md:pr-12 md:text-right">
                   <p class="text-sm font-bold text-emerald-700 dark:text-violet-400 uppercase tracking-wider mb-2">2023</p>
                   <article class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-gray-700 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                    <div class="w-14 h-14 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center mb-4 font-bold text-red-600 dark:text-red-400 md:ml-auto"></div>
                     <img src="images/logo/carrefour.png" alt="Logo Carrefour" class="h-14 object-contain mb-4 md:ml-auto" />
                     <h3 class="text-lg font-bold mb-2">Carrefour Sainte-Geneviève-des-Bois</h3>
                     <p class="text-sm text-emerald-600 dark:text-violet-400 font-semibold mb-1">Conseiller de Vente</p>
@@ -442,6 +443,9 @@
                     <p class="text-slate-600 dark:text-gray-400 text-sm mb-4">
                       Conseiller au rayon électroménager, photo, cinéma et son (EPCS). Développement des compétences en relation client et gestion de projets commerciaux.
                     </p>
+                    <a href="documents/rapport de synthese Boris EPHESTION terminale TSN3.pdf" target="_blank" class="text-emerald-600 dark:text-violet-400 font-semibold hover:underline text-sm">
+                      📝 Rapport de synthèse
+                    </a>
                   </article>
                 </div>
                 
@@ -507,20 +511,30 @@
                       <button onclick="openLightbox('projet2')" class="bg-emerald-600 dark:bg-violet-700 text-white px-5 py-2 rounded-lg hover:scale-105 transition">Voir la galerie</button>
                   </div>
               </div>
-              <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-slate-200 dark:border-gray-700">
-                  <img src="images/thinkless/landing-page-thinkless.png" class="w-full h-56 object-cover" alt="Thinkless">
-                  <div class="p-6">
-                      <h3 class="text-xl font-bold mb-2 dark:text-white">Thinkless</h3>
-                      <p class="text-slate-600 dark:text-gray-400 mb-4">Plateforme web de mise en relation entre joueurs de sport physique et e-sport. Système de ranking, matchmaking et progression en temps réel. Développement Fullstack avec gestion d'utilisateurs.</p>
-                      <button onclick="openLightbox('projet3')" class="bg-emerald-600 dark:bg-violet-700 text-white px-5 py-2 rounded-lg hover:scale-105 transition">Voir la galerie</button>
+              <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-slate-200 dark:border-gray-700 flex flex-col">
+                  <div class="w-full h-56 bg-gradient-to-br from-emerald-200 to-emerald-300 dark:from-violet-900/30 dark:to-violet-800/30 flex items-center justify-center">
+                      <div class="text-center">
+                          <svg class="w-16 h-16 text-emerald-700 dark:text-violet-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                          <p class="text-emerald-800 dark:text-violet-300 font-semibold">Votre projet ici</p>
+                      </div>
+                  </div>
+                  <div class="p-6 flex flex-col flex-grow">
+                      <h3 class="text-xl font-bold mb-2 dark:text-white">Projet / Démonstration 3</h3>
+                      <p class="text-slate-600 dark:text-gray-400 mb-4 flex-grow">Ajoutez une image de votre projet dans le dossier <code class="bg-slate-100 dark:bg-gray-700 px-2 py-1 rounded text-sm">images/projet3/</code> et modifiez cette section avec votre description et galerie.</p>
+                      <button onclick="alert('Section à configurer avec votre projet')" class="bg-slate-400 dark:bg-slate-600 text-white px-5 py-2 rounded-lg opacity-60 cursor-not-allowed">À configurer</button>
                   </div>
               </div>
               <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-slate-200 dark:border-gray-700 flex flex-col">
-                  <img src="images/f1-universe/landingpa.png" class="w-full h-56 object-cover" alt="F1 Universe">
-                  <div class="p-6">
-                      <h3 class="text-xl font-bold mb-2 dark:text-white">F1 Universe</h3>
-                      <p class="text-slate-600 dark:text-gray-400 mb-4 flex-grow">Création d’une plateforme web dédiée au sport automobile permettant la consultation des pilotes, écuries, circuits et quiz interactifs. Développement en architecture MVC avec base de données relationnelle.</p>
-                      <button onclick="openLightbox('projet4')" class="bg-emerald-600 dark:bg-violet-700 text-white px-5 py-2 rounded-lg hover:scale-105 transition">Voir la galerie</button>
+                  <div class="w-full h-56 bg-gradient-to-br from-emerald-200 to-emerald-300 dark:from-violet-900/30 dark:to-violet-800/30 flex items-center justify-center">
+                      <div class="text-center">
+                          <svg class="w-16 h-16 text-emerald-700 dark:text-violet-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                          <p class="text-emerald-800 dark:text-violet-300 font-semibold">Votre projet ici</p>
+                      </div>
+                  </div>
+                  <div class="p-6 flex flex-col flex-grow">
+                      <h3 class="text-xl font-bold mb-2 dark:text-white">Projet / Démonstration 4</h3>
+                      <p class="text-slate-600 dark:text-gray-400 mb-4 flex-grow">Ajoutez une image de votre projet dans le dossier <code class="bg-slate-100 dark:bg-gray-700 px-2 py-1 rounded text-sm">images/projet4/</code> et modifiez cette section avec votre description et galerie.</p>
+                      <button onclick="alert('Section à configurer avec votre projet')" class="bg-slate-400 dark:bg-slate-600 text-white px-5 py-2 rounded-lg opacity-60 cursor-not-allowed">À configurer</button>
                   </div>
               </div>
           </div>
@@ -618,27 +632,14 @@
       const galleries = {
             projet1: [
                 'images/site_313/darkmode.png',
-                'images/site_313/responsive(blanc).png',
+                'images/site_313/responsive(blanc).png', // Ajoute tes autres images ici
                 'images/site_313/telephone.png',
                 'images/site_313/sidebar.png'
             ],
             projet2: [
                 'images/site_accessibilite/landing-page.png',
                 'images/site_accessibilite/vue.png',
-                'images/site_accessibilite/html.png'
-            ],
-            projet3: [
-                'images/thinkless/landing-page-thinkless.png',
-                'images/thinkless/login-thinkless.png',
-                'images/thinkless/match-thinkless.png',
-                'images/thinkless/equipe-thinkless.png'
-            ],
-            projet4: [
-                'images/f1-universe/landingpa.png',
-                'images/f1-universe/login-f1.png',
-                'images/f1-universe/dashboard-f1.png',
-                'images/f1-universe/pilote-f1.png'
-            ]
+                'images/site_accessibilite/html.png']
         };
 
         let currentGallery = [];
