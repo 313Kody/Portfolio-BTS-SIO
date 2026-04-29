@@ -1,179 +1,165 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Boris EPHESTION - BTS SIO</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
     <style>
-      /* Petit ajustement pour masquer la scrollbar quand le menu est ouvert si besoin */
       body.menu-open {
         overflow: hidden;
       }
+      .transition-theme {
+        transition:
+          background-color 0.5s ease,
+          color 0.5s ease,
+          border-color 0.5s ease;
+      }
     </style>
   </head>
-  <body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
-    <header class="bg-emerald-900 text-white shadow-lg sticky top-0 z-50">
+  <body
+    class="bg-slate-50 dark:bg-gray-900 text-slate-800 dark:text-gray-100 font-sans leading-relaxed transition-theme"
+  >
+    <header
+      class="bg-emerald-900 dark:bg-gray-800 text-white shadow-lg sticky top-0 z-50 transition-theme"
+    >
       <nav
         class="container mx-auto flex justify-between items-center p-4 md:p-6"
       >
         <h1
-          class="text-2xl font-bold tracking-tight hover:text-emerald-200 transition"
+          class="text-2xl font-bold tracking-tight hover:text-emerald-200 dark:hover:text-violet-400 transition"
         >
-          <a href="Index.html">Boris EPHESTION</a>
+          <a href="index.html">Boris EPHESTION</a>
         </h1>
 
         <ul class="hidden md:flex gap-8 font-medium">
           <li>
-            <a href="#profil" class="hover:text-emerald-300 transition-colors"
+            <a
+              href="#profil"
+              class="hover:text-emerald-300 dark:hover:text-violet-400 transition-colors"
               >Profil</a
             >
           </li>
           <li>
             <a
               href="#competences"
-              class="hover:text-emerald-300 transition-colors"
+              class="hover:text-emerald-300 dark:hover:text-violet-400 transition-colors"
               >Compétences</a
             >
           </li>
           <li>
-            <a href="#projets" class="hover:text-emerald-300 transition-colors"
-              >Projets</a
-            >
-          </li>
-          <li>
-            <a href="#stages" class="hover:text-emerald-300 transition-colors"
+            <a
+              href="#stages"
+              class="hover:text-emerald-300 dark:hover:text-violet-400 transition-colors"
               >Stages</a
             >
           </li>
           <li>
-            <a href="#contact" class="hover:text-emerald-300 transition-colors"
+            <a
+              href="#projets"
+              class="hover:text-emerald-300 dark:hover:text-violet-400 transition-colors"
+              >Projets</a
+            >
+          </li>
+          <li>
+            <a
+              href="#veille"
+              class="hover:text-emerald-300 dark:hover:text-violet-400 transition-colors"
+              >Veille Technologique</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="hover:text-emerald-300 dark:hover:text-violet-400 transition-colors"
               >Contact</a
             >
           </li>
           <li>
             <a
-              href="Tableau E5"
-              class="hover:text-emerald-300 transition-colors"
-              >Tableau E5</a
+              href="documents/competencesb1epreuveE5.pdf" target="_blank"
+              class="hover:text-emerald-300 dark:hover:text-violet-400 transition-colors"
+              >Rubrique E5/E6</a
             >
           </li>
         </ul>
 
-        <div
-          class="md:hidden cursor-pointer p-2 rounded hover:bg-emerald-800 transition"
-          id="menu-open-btn"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            height="28px"
-            viewBox="0 -960 960 960"
-            width="28px"
-            fill="#ffffff"
-            id="menu-icon"
-          >
-            <path
-              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
-            />
-          </svg>
-        </div>
-      </nav>
-
-      <aside
-        id="sidebar"
-        class="fixed top-0 left-0 h-full w-64 bg-white text-slate-900 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out z-50"
-      >
-        <div class="p-6 flex flex-col h-full">
+        <div class="flex items-center gap-4">
           <button
-            id="close-sidebar"
-            class="self-end mb-8 p-2 rounded-full hover:bg-slate-100 transition"
+            onclick="toggleDarkMode()"
+            class="p-2 rounded-lg bg-emerald-800 dark:bg-gray-700 hover:bg-emerald-700 dark:hover:bg-violet-900/50 transition-all border border-emerald-700 dark:border-violet-500/30"
+          >
+            <svg
+              id="sun-icon"
+              class="w-6 h-6 hidden"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg
+              id="moon-icon"
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+          </button>
+          <div
+            class="md:hidden cursor-pointer p-2 rounded hover:bg-emerald-800 dark:hover:bg-gray-700 transition"
+            id="menu-open-btn"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              height="28px"
+              height="28"
               viewBox="0 -960 960 960"
-              width="28px"
-              fill="#000000"
+              width="28"
+              fill="white"
             >
               <path
-                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
               />
             </svg>
-          </button>
-
-          <ul class="flex flex-col gap-6 font-semibold text-lg">
-            <li>
-              <a
-                href="#profil"
-                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
-                >Profil</a
-              >
-            </li>
-            <li>
-              <a
-                href="#competences"
-                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
-                >Compétences</a
-              >
-            </li>
-            <li>
-              <a
-                href="#projets"
-                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
-                >Projets</a
-              >
-            </li>
-            <li>
-              <a
-                href="#stages"
-                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
-                >Stages</a
-              >
-            </li>
-            <li>
-              <a
-                href="#contact"
-                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
-                >Contact</a
-              >
-            </li>
-            <li>
-              <a
-                href="Tableau E5"
-                class="block p-2 hover:bg-emerald-50 hover:text-emerald-600 rounded transition sidebar-link"
-                >Tableau E5</a
-              >
-            </li>
-          </ul>
+          </div>
         </div>
-      </aside>
-
-      <div
-        id="overlay"
-        class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 md:hidden"
-      ></div>
+      </nav>
     </header>
 
     <main>
       <section
         id="landing-page"
-        class="h-[85vh] flex flex-col justify-center items-center text-center bg-gradient-to-b from-emerald-50 to-white px-4"
+        class="h-[85vh] flex flex-col justify-center items-center text-center bg-gradient-to-b from-emerald-50 to-white dark:from-gray-900 dark:to-gray-800 px-4 transition-theme"
       >
         <h1
-          class="text-5xl md:text-7xl font-extrabold text-emerald-900 mb-6 drop-shadow-sm"
+          class="text-5xl md:text-7xl font-extrabold text-emerald-900 dark:text-violet-400 mb-6"
         >
           Boris EPHESTION
         </h1>
-        <h3 class="text-xl md:text-2xl text-emerald-700 font-medium mb-6">
+        <h3
+          class="text-xl md:text-2xl text-emerald-700 dark:text-violet-300 font-medium mb-6"
+        >
           Etudiant en BTS SIO Option SLAM (développement)
         </h3>
-        <p class="text-lg md:text-xl max-w-2xl text-slate-600">
+        <p
+          class="text-lg md:text-xl max-w-2xl text-slate-600 dark:text-gray-400"
+        >
           Bienvenue sur mon Portfolio !
         </p>
-
         <div class="mt-12 animate-bounce">
           <svg
-            class="w-8 h-8 text-emerald-600"
+            class="w-8 h-8 text-emerald-600 dark:text-violet-500"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -192,517 +178,553 @@
         id="profil"
         class="container mx-auto py-20 px-6 flex flex-col md:flex-row items-center gap-12"
       >
-        <div class="md:w-1/3 flex justify-center md:justify-end">
+        <div class="md:w-1/3 flex justify-center">
           <img
             src="images/photo/boris_photo.jpg"
             alt="Photo Boris"
-            class="w-72 h-72 object-cover rounded-3xl shadow-2xl border-4 border-white transform hover:scale-105 transition duration-500"
+            class="w-72 h-72 object-cover rounded-3xl shadow-2xl border-4 border-white dark:border-gray-800 transform hover:scale-105 transition duration-500"
           />
         </div>
-
-        <div class="md:w-2/3 flex flex-col items-start space-y-4">
+        <div class="md:w-2/3 space-y-4">
           <h2
-            class="text-3xl font-bold text-emerald-800 border-b-4 border-emerald-500 pb-2"
+            class="text-3xl font-bold text-emerald-800 dark:text-violet-400 border-b-4 border-emerald-500 dark:border-violet-600 pb-2 inline-block"
           >
             À propos de moi
           </h2>
-          <article class="text-lg text-slate-700 space-y-4 leading-relaxed">
+          <article class="text-lg text-slate-700 dark:text-gray-300 space-y-4">
             <p>
               Je m’appelle Boris EPHESTION, étudiant en deuxième année de BTS
               SIO option SLAM. Passionné par l’informatique, la musique et
               l’automobile, je développe mes compétences en programmation et
               m’intéresse particulièrement aux enjeux de la cybersécurité.
             </p>
-            <p>
-              Lors de mes projets et stages, j’ai appris à travailler avec
-              différents langages et outils, ce qui me permet de participer
-              efficacement à des projets variés.
-            </p>
           </article>
           <a
-            href="documents/CV de Boris EPHESTION.pdf"
-            class="bg-emerald-600 text-white px-6 py-3 rounded-full font-bold mt-6 hover:bg-emerald-700 hover:-translate-y-1 transition shadow-lg flex items-center gap-2"
+            href="documents/CV de Boris EPHESTION.pdf" target="_blank"
+            class="inline-flex bg-emerald-600 dark:bg-violet-700 text-white px-6 py-3 rounded-full font-bold mt-6 hover:bg-emerald-700 dark:hover:bg-violet-600 transition shadow-lg gap-2"
+            >📄 Voir mon CV</a
           >
-            <span>📄</span> Voir mon CV
-          </a>
         </div>
       </section>
 
-      <section class="bg-white py-20">
+      <section
+        id="competences"
+        class="bg-slate-100 dark:bg-gray-800/50 py-20 transition-theme"
+      >
         <div class="container mx-auto px-6">
           <h2
-            class="text-3xl font-bold text-emerald-800 mb-8 text-center md:text-left"
+            class="text-3xl font-bold text-emerald-800 dark:text-violet-400 mb-12 text-center md:text-left"
           >
-            Mes formations
+            Mes compétences
           </h2>
-          <article
-            class="max-w-4xl bg-slate-50 p-8 rounded-2xl shadow-sm border-l-4 border-emerald-500"
-          >
-            <p class="mb-4 text-lg">
-              Mon parcours m’a permis d’acquérir une solide base en
-              informatique, allant de la gestion des réseaux à la conception
-              d’applications.
-            </p>
-            <p class="text-lg text-slate-700">
-              Actuellement en BTS SIO option SLAM (Solutions Logicielles et
-              Applications Métiers), je poursuis mon apprentissage du
-              développement logiciel tout en consolidant les compétences
-              techniques acquises lors de mon Bac Professionnel Systèmes
-              Numériques option RISC (Réseaux Informatiques et Systèmes
-              Communicants).
-            </p>
-          </article>
-        </div>
-      </section>
+          <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/3 space-y-6">
+              <p class="text-lg text-slate-700 dark:text-gray-300">
+                Maîtrise d'outils réseaux, systèmes et de développement moderne
+                :
+              </p>
+              <ul
+                class="list-disc pl-5 space-y-2 text-slate-600 dark:text-gray-400"
+              >
+                <li>Réseaux & Cybersécurité</li>
+                <li>Développement Fullstack</li>
+                <li>Design & Montage Vidéo</li>
+              </ul>
+            </div>
 
-      <section class="bg-emerald-900 text-white py-20">
-        <div class="container mx-auto px-6">
-          <h2 class="text-3xl font-bold mb-8 text-center md:text-left">
-            Mes diplômes
-          </h2>
-          <div class="grid md:grid-cols-2 gap-8">
-            <article
-              class="bg-emerald-800 p-6 rounded-xl shadow-lg hover:bg-emerald-700 transition"
-            >
-              <span class="text-emerald-300 font-bold text-xl block mb-2"
-                >2025</span
+            <div class="md:w-2/3 w-full relative group">
+              <div
+                class="overflow-hidden bg-white dark:bg-gray-800 p-10 rounded-3xl shadow-xl border border-transparent dark:border-violet-500/20"
               >
-              <p class="font-semibold text-lg">BTS SIO option SLAM</p>
-              <p class="text-emerald-200 text-sm italic mt-1">En cours</p>
-            </article>
-            <article
-              class="bg-emerald-800 p-6 rounded-xl shadow-lg hover:bg-emerald-700 transition"
-            >
-              <span class="text-emerald-300 font-bold text-xl block mb-2"
-                >2024</span
+                <div id="skill-slider" class="flex transition-transform duration-500 ease-in-out">
+                <div class="min-w-full flex flex-wrap justify-center gap-8">
+                    <div class="relative group/tool">
+                        <img src="images/logo/cisco_packet_tracer.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Cisco">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">Packet Tracer</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/virtualbox.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="VBox">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">VirtualBox</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/kalilinux.svg" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Kali">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">Kali Linux</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/debian.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Debian">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">Debian</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/php.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="PHP">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">PHP</span>
+                    </div>
+                </div>
+                <div class="min-w-full flex flex-wrap justify-center gap-8">
+                    <div class="relative group/tool">
+                        <img src="images/logo/python.svg" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Python">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">Python</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/javascript.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="JS">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">JavaScript</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/typescript.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="TS">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">TypeScript</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/html.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="HTML">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">HTML5</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/css.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="CSS">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">CSS3</span>
+                    </div>
+                </div>
+                <div class="min-w-full flex flex-wrap justify-center gap-8">
+                    <div class="relative group/tool">
+                        <img src="images/logo/nodejs.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Node">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">NodeJS</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/angular.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Angular">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">Angular</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/tailwindcss.svg" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Tailwind">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">Tailwind</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/postgresql.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Postgres">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">PostgreSQL</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/mysql.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="MySQL">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">MySQL</span>
+                    </div>
+                </div>
+                <div class="min-w-full flex flex-wrap justify-center gap-8">
+                    <div class="relative group/tool">
+                        <img src="images/logo/git.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Git">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">Git</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/Adobe_Premiere_Pro.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Premiere">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">Premiere Pro</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/Adobe_Photoshop.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Photoshop">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">Photoshop</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/github.svg" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition dark:invert" alt="Github">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">GitHub</span>
+                    </div>
+                    <div class="relative group/tool">
+                        <img src="images/logo/entra-id.png" class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition" alt="Entra">
+                        <span class="absolute -top-10 left-1/2 -translate-x-1/2 bg-emerald-600 dark:bg-violet-700 text-white text-xs font-bold px-2 py-1 rounded opacity-0 group-hover/tool:opacity-100 transition-opacity pointer-events-none">Entra ID</span>
+                    </div>
+                </div>
+              </div>
+              <button
+                onclick="moveSlider(-1)"
+                class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 bg-emerald-600 dark:bg-violet-700 text-white w-10 h-10 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all"
               >
-              <p class="font-semibold text-lg">
-                Baccalauréat Professionnel Systèmes Numériques (RISC)
-              </p>
-              <p class="text-emerald-200 text-sm italic mt-1">
-                Mention Très Bien
-              </p>
-            </article>
+                ‹
+              </button>
+              <button
+                onclick="moveSlider(1)"
+                class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 bg-emerald-600 dark:bg-violet-700 text-white w-10 h-10 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all"
+              >
+                ›
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="stages" class="container mx-auto py-20 px-6">
-        <h2 class="text-3xl font-bold text-emerald-800 mb-12 text-center">
+        <h2
+          class="text-3xl font-bold text-emerald-800 dark:text-violet-400 mb-12 text-center"
+        >
           Mon expérience
         </h2>
-
         <div class="grid md:grid-cols-2 gap-10">
-          <div class="flex flex-col items-start">
+          <div>
             <article
-              class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 h-full w-full hover:shadow-xl transition"
+              class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-gray-700 h-full"
             >
-              <div class="h-20 mb-4 flex items-center">
-                <img
-                  src="/images/logo/chantiers_modernes.jpg"
-                  alt="logo Chantiers Modernes"
-                  class="max-h-full object-contain"
-                />
-              </div>
-              <h3 class="text-xl font-bold text-slate-800 mb-3">
+              <img
+                src="images/logo/chantiers_modernes.jpg"
+                alt="logo Chantiers Modernes"
+                class="h-16 object-contain mb-4"
+              />
+              <h3 class="text-xl font-bold mb-3">
                 Chantiers Modernes Construction (Vinci)
               </h3>
-              <p class="text-slate-600">
-                Chantiers Modernes Construction est une filiale du groupe Vinci
-                Construction France, j'y ai réalisé un stage qui consistait
-                principalement dans la maintenance informatique.
+              <p class="text-slate-600 dark:text-gray-400 mb-4">
+                Maintenance informatique et support technique au sein d'une
+                filiale de Vinci Construction.
               </p>
+              <a
+                href="documents/Rapport de stage SIO1B Boris EPHESTION.pdf" target="_blank"
+                class="text-emerald-600 dark:text-violet-400 font-semibold hover:underline"
+                >📝 Voir le rapport</a
+              >
             </article>
-            <a
-              href="documents/Rapport de stage SIO1B Boris EPHESTION.pdf"
-              class="mt-4 text-emerald-600 font-semibold hover:text-emerald-800 hover:underline flex items-center gap-1 transition"
-            >
-              📝 Voir mon rapport de stage
-            </a>
           </div>
-
-          <div class="flex flex-col items-start">
+          <div>
             <article
-              class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 h-full w-full hover:shadow-xl transition"
+              class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-gray-700 h-full"
             >
-              <div class="h-20 mb-4 flex items-center">
-                <img
-                  src="images/logo/aphp.png"
-                  alt="Logo APHP"
-                  class="max-h-full object-contain"
-                />
-              </div>
-              <h3 class="text-xl font-bold text-slate-800 mb-3">
-                Hôpital Saint-Louis APHP
-              </h3>
-              <p class="text-slate-600 mb-2">
-                Au cours de mon stage à Saint-Louis, j’ai assuré le support
-                technique auprès des utilisateurs, participé à la configuration
-                et à la mise à jour de switches réseau.
+              <img
+                src="images/logo/aphp.png"
+                alt="Logo APHP"
+                class="h-16 object-contain mb-4"
+              />
+              <h3 class="text-xl font-bold mb-3">Hôpital Saint-Louis APHP</h3>
+              <p class="text-slate-600 dark:text-gray-400 mb-4">
+                Support utilisateurs et configuration réseau (switches).
               </p>
-              <p class="text-slate-600">
-                J'ai pu accompagner les techniciens dans la préparation du
-                matériel nécessaire aux interventions.
-              </p>
+              <a
+                href="documents/rapport de synthese Boris EPHESTION terminale TSN3.pdf" target="_blank"
+                class="text-emerald-600 dark:text-violet-400 font-semibold hover:underline"
+                >📝 Voir le rapport</a
+              >
             </article>
-            <a
-              href="documents/rapport de synthese Boris EPHESTION terminale TSN3.pdf"
-              class="mt-4 text-emerald-600 font-semibold hover:text-emerald-800 hover:underline flex items-center gap-1 transition"
+          </div>
+          <div>
+            <article
+              class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-slate-100 dark:border-gray-700 h-full"
             >
-              📝 Voir mon rapport de stage
+              <img
+                src="images/logo/Akonis.jpg"
+                alt="Logo Akonis"
+                class="h-16 object-contain mb-4"
+              />
+              <h3 class="text-xl font-bold mb-3">Akonis</h3>
+              <p class="text-slate-600 dark:text-gray-400 mb-4">
+                Entreprise expert en cybersécurité
+              </p>
+              <a
+                href="documents/rapport de stage SIO2B Boris EPHESTION.pdf" target="_blank"
+                class="text-emerald-600 dark:text-violet-400 font-semibold hover:underline"
+                >📝 Voir le rapport</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projets" class="py-20 px-6 max-w-6xl mx-auto transition-theme">
+        <h2 class="text-4xl font-bold mb-12 text-center text-emerald-800 dark:text-violet-400">Mes Projets</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-slate-200 dark:border-gray-700">
+                  <img src="images/site_313/darkmode.png" class="w-full h-56 object-cover" alt="Projet 313">
+                  <div class="p-6">
+                      <h3 class="text-xl font-bold mb-2 dark:text-white">Site Web de la 313PLUG</h3>
+                      <p class="text-slate-600 dark:text-gray-400 mb-4">Création d'un site de présentation d'un groupe de musique avec intégration d'un mode sombre et design responsive.</p>
+                      <button onclick="openLightbox('projet1')" class="bg-emerald-600 dark:bg-violet-700 text-white px-5 py-2 rounded-lg hover:scale-105 transition">Voir la galerie</button>
+                  </div>
+              </div>
+              <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-slate-200 dark:border-gray-700">
+                  <img src="images/site_accessibilite/landing-page.png" class="w-full h-56 object-cover" alt="Accessibilité">
+                  <div class="p-6">
+                      <h3 class="text-xl font-bold mb-2 dark:text-white">Accessibilité Web </h3>
+                      <p class="text-slate-600 dark:text-gray-400 mb-4">Apprentissage a l'optimisation de l'expérience utilisateur et mise en conformité RGAA. (aria-label)</p>
+                      <button onclick="openLightbox('projet2')" class="bg-emerald-600 dark:bg-violet-700 text-white px-5 py-2 rounded-lg hover:scale-105 transition">Voir la galerie</button>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-black/95 flex items-center justify-center p-4">
+          <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-4xl hover:text-gray-300">&times;</button>
+          
+          <div class="max-w-5xl w-full flex flex-col items-center">
+              <img id="lightbox-img" src="" class="max-h-[80vh] rounded shadow-2xl transition-all duration-300">
+              
+              <div class="flex gap-4 mt-6">
+                  <button onclick="prevImg()" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full border border-white/20">Précédent</button>
+                  <button onclick="nextImg()" class="bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-full border border-white/20">Suivant</button>
+              </div>
+          </div>
+      </div>
+      </section>
+
+     <section id="veille" class="bg-white dark:bg-gray-800/50 py-24 px-6 transition-theme relative overflow-hidden">
+    <div class="container mx-auto max-w-7xl">
+        <h2 class="text-4xl font-black text-emerald-800 dark:text-violet-400 mb-4 text-center md:text-left tracking-tight">Veille Technologique</h2>
+        
+        <div class="mb-16 p-8 bg-slate-50 dark:bg-gray-800/80 rounded-[2.5rem] border-l-8 border-emerald-500 dark:border-violet-500 shadow-sm max-w-4xl">
+            <h3 class="text-xl font-bold dark:text-white mb-3 italic">Problématique : L'IA au service de la performance absolue</h3>
+            <p class="text-lg text-slate-700 dark:text-gray-300 leading-relaxed">
+                Ma veille explore la convergence entre le <strong>Big Data</strong> et la <strong>Formule 1</strong>. L'objectif est de démontrer comment les écuries ne se battent plus seulement sur l'aérodynamisme, mais sur leur capacité à traiter des téraoctets de données en temps réel pour prédire l'incertain (météo, usure, trafic) via des <strong>Digital Twins</strong> et du Machine Learning.
+            </p>
+        </div>
+
+        <div class="hidden lg:block absolute top-[55%] left-1/2 w-[75%] h-0.5 border-t-2 border-dashed border-emerald-500/20 dark:border-violet-500/20 -translate-x-1/2"></div>
+
+        <div class="grid lg:grid-cols-3 gap-10 relative z-10">
+            
+            <div class="flex flex-col">
+                <div class="bg-slate-50 dark:bg-gray-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-violet-500/20 shadow-xl h-full flex flex-col transition-all hover:border-emerald-500/50">
+                    <div class="w-12 h-12 bg-emerald-500 text-white rounded-2xl flex items-center justify-center font-bold mb-6 shadow-lg rotate-3">01</div>
+                    <h3 class="text-2xl font-bold mb-6 dark:text-white flex items-center gap-2">🏎️ Analyse de Fond</h3>
+                    
+                    <div class="space-y-8 flex-grow">
+                        <div class="pb-6 border-b border-slate-200 dark:border-gray-700">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[11px] font-black bg-emerald-100 text-emerald-700 px-2 py-1 rounded-md uppercase tracking-wider">PREDICTION</span>
+                                <span class="text-xs text-slate-400 font-medium">2020</span>
+                            </div>
+                            <a href="https://www.lebigdata.fr/formule-1-machine-learning" target="_blank" class="text-sm font-extrabold hover:text-emerald-600 dark:text-gray-100 transition-colors">Le Machine Learning révolutionne la F1</a>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">Prouve que l'IA était déjà identifiée comme le futur pilier de la stratégie de course.</p>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[11px] font-black bg-blue-100 text-blue-700 px-2 py-1 rounded-md uppercase tracking-wider">CONFIRMATION</span>
+                                <span class="text-xs text-slate-400 font-medium">2023</span>
+                            </div>
+                            <a href="https://www.silicon.fr/Thematique/data-ia-1372/Breves/Formule-1-une-course-a-la-donnee-459244.htm" target="_blank" class="text-sm font-extrabold hover:text-blue-600 dark:text-gray-100 transition-colors">F1 : Une course à la donnée</a>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">Validation : l'objectif sportif est désormais indissociable de la puissance de calcul.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="bg-slate-50 dark:bg-gray-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-violet-500/20 shadow-xl h-full flex flex-col transition-all hover:border-blue-500/50">
+                    <div class="w-12 h-12 bg-blue-500 text-white rounded-2xl flex items-center justify-center font-bold mb-6 shadow-lg -rotate-3">02</div>
+                    <h3 class="text-2xl font-bold mb-6 dark:text-white flex items-center gap-2">📈 Enjeux & Expérience</h3>
+                    
+                    <div class="space-y-8 flex-grow">
+                        <div class="pb-6 border-b border-slate-200 dark:border-gray-700">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[11px] font-black bg-orange-100 text-orange-700 px-2 py-1 rounded-md uppercase tracking-wider">BUSINESS</span>
+                                <span class="text-xs text-slate-400 font-medium">2019</span>
+                            </div>
+                            <a href="https://www.challenges.fr/entreprise/tech-numerique/tour-de-france-nfl-f1-avec-aws-lia-se-met-au-sport-sans-jamais-oublier-le-business_620714" target="_blank" class="text-sm font-extrabold hover:text-orange-600 dark:text-gray-100 transition-colors">AWS : L'IA se met au sport</a>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">Démontre la fusion entre performance athlétique et enjeux économiques AWS.</p>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[11px] font-black bg-purple-100 text-purple-700 px-2 py-1 rounded-md uppercase tracking-wider">FAN EXPERIENCE</span>
+                                <span class="text-xs text-slate-400 font-medium">2024</span>
+                            </div>
+                            <a href="https://www.aboutamazon.fr/actualites/aws/la-formule-1-et-aws-revolutionnent-lexperience-des-fans-grace-a-lia-generative-creez-et-pilotez-votre-circuit-de-grand-prix-comme-un-professionnel" target="_blank" class="text-sm font-extrabold hover:text-purple-600 dark:text-gray-100 transition-colors">IA Générative pour les fans</a>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">L'innovation s'étend au-delà du cockpit pour révolutionner l'engagement des spectateurs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="bg-slate-50 dark:bg-gray-800 p-8 rounded-[2.5rem] border border-slate-200 dark:border-violet-500/20 shadow-xl h-full flex flex-col transition-all hover:border-violet-500/50">
+                    <div class="w-12 h-12 bg-violet-500 text-white rounded-2xl flex items-center justify-center font-bold mb-6 shadow-lg rotate-3">03</div>
+                    <h3 class="text-2xl font-bold mb-6 dark:text-white flex items-center gap-2">🔔 Veille Active</h3>
+                    
+                    <div class="flex-grow">
+                        <div class="mb-10">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-[11px] font-black bg-red-100 text-red-700 px-2 py-1 rounded-md uppercase tracking-wider">ACTUALITÉ 2025</span>
+                                <span class="text-xs text-slate-400 font-medium">Déc. 2024</span>
+                            </div>
+                            <a href="https://www.sportsmarketing.fr/renouvellement-partenariat-google-mclaren-2025/" target="_blank" class="text-sm font-extrabold hover:text-red-600 dark:text-gray-100 transition-colors">Google & McLaren : Accord 2025</a>
+                            <p class="text-xs text-slate-500 dark:text-gray-400 mt-2 leading-relaxed">Preuve de la vitalité du sujet : les partenariats tech se renforcent pour la saison 2025.</p>
+                        </div>
+
+                        <div class="pt-8 border-t border-slate-200 dark:border-gray-700 text-center">
+                            <p class="text-[11px] font-black text-slate-400 uppercase mb-6 tracking-widest">Écosystème de veille</p>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-700 rounded-xl mb-2 shadow-sm">
+                                        <img src="images/logo/perplexity.svg" alt="Perplexity" class="h-6 w-6 grayscale hover:grayscale-0 transition-all">
+                                    </div>
+                                    <span class="text-[9px] font-bold text-slate-500 dark:text-gray-400 uppercase">Perplexity</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-700 rounded-xl mb-2 shadow-sm">
+                                        <img src="images/logo/feedly.svg" alt="Feedly" class="h-6 w-6 grayscale hover:grayscale-0 transition-all">
+                                    </div>
+                                    <span class="text-[9px] font-bold text-slate-500 dark:text-gray-400 uppercase">Feedly</span>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-700 rounded-xl mb-2 shadow-sm">
+                                        <img src="images/logo/googlegemini.svg" alt="Gemini" class="h-6 w-6 grayscale hover:grayscale-0 transition-all">
+                                    </div>
+                                    <span class="text-[9px] font-bold text-slate-500 dark:text-gray-400 uppercase">Gemini</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 flex flex-col items-center">
+            <div class="w-px h-16 bg-gradient-to-b from-transparent via-emerald-500 to-transparent dark:via-violet-500 mb-8"></div>
+            <a href="https://www.canva.com/design/DAG32WV5Dy4/Mk8hXLBAbBfZ7aiw-3rX5Q/view?..." 
+               target="_blank" 
+               class="group relative inline-flex items-center gap-6 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-12 py-6 rounded-[2rem] shadow-2xl hover:scale-105 transition-all duration-300">
+                <span class="font-black text-xl uppercase tracking-tight italic">Mon diaporama sur Canva</span>
+                <div class="bg-emerald-500 dark:bg-violet-500 p-2 rounded-full group-hover:translate-x-2 transition-transform shadow-lg">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </div>
             </a>
-          </div>
         </div>
-      </section>
+    </div>
+</section>
 
-      <section id="competences" class="bg-slate-100 py-20">
-        <div
-          class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12"
-        >
-          <div class="md:w-1/2 space-y-6">
-            <h2 class="text-3xl font-bold text-emerald-800">Mes compétences</h2>
-            <div class="text-lg text-slate-700 space-y-4">
-              <p>
-                Lors de ma formation en BTS SIO, j’ai développé des compétences
-                en programmation web et en sécurisation des systèmes.
-              </p>
-              <p>
-                J’ai appris à travailler avec différents outils et
-                environnements (PHP, Python, MySQL, virtualisation, cloud), ce
-                qui me permet de comprendre et de participer efficacement à des
-                projets informatiques variés.
-              </p>
-              <ul class="list-disc pl-5 space-y-2 text-slate-600">
-                <li>Configuration et gestion de routeurs / switches</li>
-                <li>Maintenance de 1er niveau</li>
-                <li>Développement Fullstack</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="md:w-1/2 bg-white p-8 rounded-3xl shadow-xl">
-            <div class="flex flex-wrap justify-center gap-6">
-              <img
-                src="images/logo/cisco_packet_tracer.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="Packet Tracer"
-              />
-              <img
-                src="images/logo/virtualbox.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="VirtualBox"
-              />
-              <img
-                src="images/logo/kalilinux.svg"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="Kali"
-              />
-              <img
-                src="images/logo/debian.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="Debian"
-              />
-              <img
-                src="images/logo/php.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="PHP"
-              />
-              <img
-                src="images/logo/python.svg"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="Python"
-              />
-              <img
-                src="images/logo/javascript.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="JS"
-              />
-              <img
-                src="images/logo/typescript.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="TS"
-              />
-              <img
-                src="images/logo/html.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="HTML"
-              />
-              <img
-                src="images/logo/css.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="CSS"
-              />
-              <img
-                src="images/logo/nodejs.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="NodeJS"
-              />
-              <img
-                src="images/logo/angular.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="Angular"
-              />
-              <img
-                src="images/logo/tailwindcss.svg"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="Tailwind"
-              />
-              <img
-                src="images/logo/postgresql.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="PostgreSQL"
-              />
-              <img
-                src="images/logo/mysql.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="MySQL"
-              />
-              <img
-                src="images/logo/git.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="Git"
-              />
-              <img
-                src="images/logo/Adobe_Premiere_Pro.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="Premiere"
-              />
-              <img
-                src="images/logo/Adobe_Photoshop.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="Photoshop"
-              />
-              <img
-                src="images/logo/aws.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="AWS"
-              />
-              <img
-                src="images/logo/github.svg"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="GitHub"
-              />
-              <img
-                src="images/logo/entra-id.png"
-                class="w-14 h-14 object-contain grayscale hover:grayscale-0 hover:scale-110 transition duration-300"
-                title="Entra ID"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projets" class="container mx-auto py-20 px-6">
-        <h2 class="text-3xl font-bold text-emerald-800 mb-12 text-center">
-          Mes projets
+      <section id="contact" class="bg-slate-50 dark:bg-gray-900/50 py-20 px-6 transition-theme">
+    <div class="container mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold text-emerald-800 dark:text-violet-400 mb-6">
+            Contactez-moi
         </h2>
 
-        <div class="grid md:grid-cols-2 gap-8">
-          <article
-            class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition duration-300 flex flex-col"
-          >
-            <div class="relative overflow-hidden group h-64">
-              <img
-                src="images/site_313/darkmode.png"
-                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                alt="Page de garde du site 313plug"
-              />
-              <div
-                class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition"
-              ></div>
-            </div>
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-emerald-900 mb-2">
-                Premier Projet
-              </h3>
-              <p class="text-slate-600 mb-4 flex-grow">
-                Il s'agit d'un site web vitrine en HTML/CSS et un script JS.
-              </p>
-              <a
-                href="images/site_313/responsive(blanc).png"
-                class="inline-block text-center bg-emerald-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-emerald-700 transition"
-              >
-                Voir plus
-              </a>
-            </div>
-          </article>
-
-          <article
-            class="bg-white rounded-2xl overflow-hidden shadow-lg border border-slate-100 hover:shadow-2xl transition duration-300 flex flex-col"
-          >
-            <div class="relative overflow-hidden group h-64">
-              <img
-                src="images/site_accessibilite/landing-page.png"
-                class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
-                alt="landing page du site d'accessiblité"
-              />
-              <div
-                class="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition"
-              ></div>
-            </div>
-            <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-bold text-emerald-900 mb-2">
-                Deuxième Projet
-              </h3>
-              <p class="text-slate-600 mb-4 flex-grow">
-                Il s'agit d'un site web réalisé en classe pour comprendre et
-                s'entraîner à l'accessibilité web.
-              </p>
-              <a
-                href="images/site_accessibilite/accessiblilité-vue.png"
-                class="inline-block text-center bg-emerald-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-emerald-700 transition"
-              >
-                Voir plus
-              </a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="bg-slate-50 py-20 px-6">
-        <div class="container mx-auto max-w-2xl text-center">
-          <h2 class="text-3xl font-bold text-emerald-800 mb-6">
-            Contactez-moi
-          </h2>
-
-          <div class="bg-white p-8 rounded-2xl shadow-xl">
-            <p class="text-lg text-slate-700 mb-4">
-              Une question ou une proposition de stage ?
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-transparent dark:border-gray-700 transition-theme">
+            <p class="text-lg text-slate-700 dark:text-gray-300 mb-4">
+                Une question ou une proposition de stage ?
             </p>
-            <p class="font-medium mb-6">
-              Email :
-              <a
-                href="mailto:borisephestion@gmail.com"
-                class="text-emerald-600 hover:underline"
-                >borisephestion@gmail.com</a
-              >
+            <p class="font-medium mb-6 dark:text-white">
+                Email :
+                <a href="mailto:borisephestion@gmail.com" class="text-emerald-600 dark:text-violet-400 hover:underline">
+                    borisephestion@gmail.com
+                </a>
             </p>
 
             <div class="flex justify-center gap-6 mb-8">
-              <a
-                href="https://www.linkedin.com/in/boris-ephestion-52082b280"
-                target="_blank"
-                class="transform hover:scale-110 transition"
-              >
-                <img
-                  src="images/logo/Linkedin.png"
-                  alt="LinkedIn"
-                  class="w-10 h-10"
-                />
-              </a>
-              <a
-                href="https://github.com/313Kody"
-                target="_blank"
-                class="transform hover:scale-110 transition"
-              >
-                <img
-                  src="images/logo/github.svg"
-                  alt="GitHub"
-                  class="w-10 h-10"
-                />
-              </a>
+                <a href="https://www.linkedin.com/in/boris-ephestion-52082b280" target="_blank" class="transform hover:scale-110 transition">
+                    <img src="images/logo/Linkedin.png" alt="LinkedIn" class="w-10 h-10" />
+                </a>
+                <a href="https://github.com/313Kody" target="_blank" class="transform hover:scale-110 transition">
+                    <img src="images/logo/github.svg" alt="GitHub" class="w-10 h-10 dark:invert" />
+                </a>
             </div>
 
             <form class="flex flex-col gap-4 text-left">
-              <div>
-                <label class="block text-sm font-medium text-slate-700 mb-1"
-                  >Nom</label
-                >
-                <input
-                  type="text"
-                  placeholder="Votre nom"
-                  class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
-                />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-slate-700 mb-1"
-                  >E-mail</label
-                >
-                <input
-                  type="email"
-                  placeholder="Votre e-mail"
-                  class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
-                />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-slate-700 mb-1"
-                  >Message</label
-                >
-                <textarea
-                  placeholder="Votre message"
-                  rows="4"
-                  class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                class="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg hover:bg-emerald-700 transition shadow-md"
-              >
-                Envoyer
-              </button>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Nom</label>
+                    <input type="text" placeholder="Votre nom" 
+                        class="w-full bg-slate-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg p-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-violet-500 transition" />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">E-mail</label>
+                    <input type="email" placeholder="Votre e-mail" 
+                        class="w-full bg-slate-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg p-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-violet-500 transition" />
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 dark:text-gray-300 mb-1">Message</label>
+                    <textarea placeholder="Votre message" rows="4" 
+                        class="w-full bg-slate-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg p-3 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-violet-500 transition"></textarea>
+                </div>
+                <button type="submit" 
+                    class="w-full bg-emerald-600 dark:bg-violet-700 text-white font-bold py-3 rounded-lg hover:bg-emerald-700 dark:hover:bg-violet-600 transition shadow-md">
+                    Envoyer
+                </button>
             </form>
-          </div>
         </div>
-      </section>
-    </main>
+    </div>
+</section>
 
-    <footer class="bg-white border-t border-slate-200 mt-10 p-6 text-center">
-      <div
-        class="flex justify-center space-x-6 mb-4 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition"
-      >
-        <a
-          href="https://www.linkedin.com/in/boris-ephestion-52082b280"
-          target="_blank"
-        >
-          <img
-            src="images/logo/Linkedin.png"
-            alt="LinkedIn"
-            class="inline w-6 h-6"
-          />
+<footer class="bg-white dark:bg-gray-900 border-t border-slate-200 dark:border-gray-800 p-6 text-center transition-theme">
+    <div class="flex justify-center space-x-6 mb-4 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition">
+        <a href="https://www.linkedin.com/in/boris-ephestion-52082b280" target="_blank">
+            <img src="images/logo/Linkedin.png" alt="LinkedIn" class="inline w-6 h-6" />
         </a>
         <a href="https://github.com/313Kody" target="_blank">
-          <img
-            src="images/logo/github.svg"
-            alt="GitHub"
-            class="inline w-6 h-6"
-          />
+            <img src="images/logo/github.svg" alt="GitHub" class="inline w-6 h-6 dark:invert" />
         </a>
-      </div>
-      <p class="text-slate-500 text-sm">
+    </div>
+    <p class="text-slate-500 dark:text-gray-400 text-sm font-medium">
         &copy; 2025 Boris EPHESTION - BTS SIO
-      </p>
-    </footer>
+    </p>
+</footer>
+
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const sidebar = document.getElementById("sidebar");
-        const openBtn = document.getElementById("menu-open-btn");
-        const closeBtn = document.getElementById("close-sidebar");
-        const overlay = document.getElementById("overlay");
-        const sidebarLinks = document.querySelectorAll(".sidebar-link");
+      // DARK MODE
+      function toggleDarkMode() {
+        const html = document.documentElement;
+        const sunIcon = document.getElementById("sun-icon");
+        const moonIcon = document.getElementById("moon-icon");
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          sunIcon.classList.add("hidden");
+          moonIcon.classList.remove("hidden");
+        } else {
+          html.classList.add("dark");
+          sunIcon.classList.remove("hidden");
+          moonIcon.classList.add("hidden");
+        }
+      }
 
-        function openSidebar() {
-          sidebar.classList.remove("-translate-x-full");
-          overlay.classList.remove("hidden");
-          document.body.classList.add("menu-open");
+      // SLIDER COMPETENCES
+      let currentSlide = 0;
+      const totalSlides = 4;
+      function moveSlider(direction) {
+        const slider = document.getElementById("skill-slider");
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+
+      // SIDEBAR MOBILE
+      const openBtn = document.getElementById("menu-open-btn");
+      const sidebar = document.createElement("div"); // Pour l'exemple mobile simplifié
+      openBtn.onclick = () => alert("Menu mobile à intégrer si besoin");              // Configuration des galeries
+      
+      const galleries = {
+            projet1: [
+                'images/site_313/darkmode.png',
+                'images/site_313/responsive(blanc).png', // Ajoute tes autres images ici
+                'images/site_313/telephone.png',
+                'images/site_313/sidebar.png'
+            ],
+            projet2: [
+                'images/site_accessibilite/landing-page.png',
+                'images/site_accessibilite/vue.png',
+                'images/site_accessibilite/html.png']
+        };
+
+        let currentGallery = [];
+        let currentIndex = 0;
+
+        function openLightbox(projectId) {
+            currentGallery = galleries[projectId];
+            currentIndex = 0;
+            updateLightboxImage();
+            document.getElementById('lightbox').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Bloque le scroll derrière
         }
 
-        function closeSidebar() {
-          sidebar.classList.add("-translate-x-full");
-          overlay.classList.add("hidden");
-          document.body.classList.remove("menu-open");
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Réactive le scroll
         }
 
-        // Écouteurs d'événements
-        openBtn.addEventListener("click", openSidebar);
-        closeBtn.addEventListener("click", closeSidebar);
-        overlay.addEventListener("click", closeSidebar);
+        function updateLightboxImage() {
+            const imgElement = document.getElementById('lightbox-img');
+            imgElement.src = currentGallery[currentIndex];
+        }
 
-        // Fermer la sidebar quand on clique sur un lien du menu
-        sidebarLinks.forEach((link) => {
-          link.addEventListener("click", closeSidebar);
+        function nextImg() {
+            currentIndex = (currentIndex + 1) % currentGallery.length;
+            updateLightboxImage();
+        }
+
+        function prevImg() {
+            currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+            updateLightboxImage();
+        }
+
+        // Fermer la lightbox avec la touche Echap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeLightbox();
         });
-      });
     </script>
   </body>
 </html>
