@@ -158,7 +158,7 @@
         <h3
           class="text-xl md:text-2xl text-emerald-700 dark:text-violet-300 font-medium mb-6"
         >
-          Cybersécurité & Ethical Hacking - Étudiant EFREI
+          Cybersécurité & Ethical Hacking - Alternant EFREI
         </h3>
         <p class="text-lg text-emerald-600 dark:text-violet-300 font-semibold">En recherche d'alternance : Analyse SOC | DevSecOps | Cybersécurité</p>
         <p
@@ -202,7 +202,7 @@
           </h2>
           <article class="text-lg text-slate-700 dark:text-gray-300 space-y-4">
             <p>
-              Je m'appelle Boris EPHESTION, étudiant en Cybersécurité & Ethical Hacking à l'EFREI Paris. Titulaire d'un BTS SIO Option SLAM, je suis motivé par la sécurité informatique et les enjeux de protection des infrastructures critiques.
+              Je m'appelle Boris EPHESTION, alternant en Cybersécurité & Ethical Hacking à l'EFREI Paris. Titulaire d'un diplôme BTS SIO Option SLAM (2026), je suis motivé par la sécurité informatique et les enjeux de protection des infrastructures critiques.
             </p>
             <p>
               À la recherche d'une alternance pour approfondir mes compétences en analyse SOC, DevSecOps ou défense cyber, je suis déterminé à contribuer à la sécurité des systèmes d'information et à développer une expertise solide dans le domaine de la cybersécurité.
@@ -516,18 +516,11 @@
                   </div>
               </div>
               <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-slate-200 dark:border-gray-700 flex flex-col">
-                  <div class="w-full h-56 bg-gradient-to-br from-emerald-200 to-emerald-300 dark:from-violet-900/30 dark:to-violet-800/30 flex items-center justify-center">
-                      <div class="text-center">
-                          <svg class="w-16 h-16 text-emerald-700 dark:text-violet-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
-                          <p class="text-emerald-800 dark:text-violet-300 font-semibold">Votre projet ici</p>
-                      </div>
-                  </div>
-                  <div class="p-6 flex flex-col flex-grow">
+                  <img src="images/f1-universe/landingpa.png" class="w-full h-56 object-cover" alt="F1 Universe">
+                  <div class="p-6">
                       <h3 class="text-xl font-bold mb-2 dark:text-white">F1 Universe</h3>
-                      <p class="text-slate-600 dark:text-gray-400 mb-4 flex-grow">
-                        Création d’une plateforme web dédiée au sport automobile permettant la consultation des pilotes, écuries, circuits et quiz interactifs. Développement en architecture MVC avec base de données relationnelle.
-                      </p>
-                      <button onclick="alert('Section à configurer avec votre projet')" class="bg-slate-400 dark:bg-slate-600 text-white px-5 py-2 rounded-lg opacity-60 cursor-not-allowed">À configurer</button>
+                      <p class="text-slate-600 dark:text-gray-400 mb-4 flex-grow">Création d’une plateforme web dédiée au sport automobile permettant la consultation des pilotes, écuries, circuits et quiz interactifs. Développement en architecture MVC avec base de données relationnelle.</p>
+                      <button onclick="openLightbox('projet4')" class="bg-emerald-600 dark:bg-violet-700 text-white px-5 py-2 rounded-lg hover:scale-105 transition">Voir la galerie</button>
                   </div>
               </div>
           </div>
@@ -555,7 +548,7 @@
 
         <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-transparent dark:border-gray-700 transition-theme">
             <p class="text-lg text-slate-700 dark:text-gray-300 mb-4">
-                Vous avez une opportunité d'alternance en cybersécurité (SOC, DevSecOps, Pentest) ? Je serais ravi d'en discuter !
+                Vous avez une opportunité d'alternance en cybersécurité (SOC, DevSecOps, Pentest, GRC) ? Je serais ravi d'en discuter !
             </p>
             <p class="font-medium mb-6 dark:text-white">
                 Email :
@@ -586,7 +579,7 @@
         </a>
     </div>
     <p class="text-slate-500 dark:text-gray-400 text-sm font-medium">
-        &copy; 2025 Boris EPHESTION - Cybersécurité & Ethical Hacking (EFREI)
+        &copy; 2026 Boris EPHESTION - Cybersécurité & Ethical Hacking (EFREI)
     </p>
 </footer>
 
@@ -625,14 +618,27 @@
       const galleries = {
             projet1: [
                 'images/site_313/darkmode.png',
-                'images/site_313/responsive(blanc).png', // Ajoute tes autres images ici
+                'images/site_313/responsive(blanc).png',
                 'images/site_313/telephone.png',
                 'images/site_313/sidebar.png'
             ],
             projet2: [
                 'images/site_accessibilite/landing-page.png',
                 'images/site_accessibilite/vue.png',
-                'images/site_accessibilite/html.png']
+                'images/site_accessibilite/html.png'
+            ],
+            projet3: [
+                'images/thinkless/landing-page-thinkless.png',
+                'images/thinkless/login-thinkless.png',
+                'images/thinkless/match-thinkless.png',
+                'images/thinkless/equipe-thinkless.png'
+            ],
+            projet4: [
+                'images/f1-universe/landingpa.png',
+                'images/f1-universe/login-f1.png',
+                'images/f1-universe/dashboard-f1.png',
+                'images/f1-universe/pilote-f1.png'
+            ]
         };
 
         let currentGallery = [];
